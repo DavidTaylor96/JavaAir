@@ -25,7 +25,7 @@ public class Flight {
     private int emptySeats;
 
    private Flight flight;
-   private String assignSeatNumber;
+   private ArrayList<Passenger> assignSeatNumber;
 
     public Flight(String flightNumber, String destination, String departureAirport, String departureTime, Plane plane) {
 
@@ -33,6 +33,7 @@ public class Flight {
         this.destination = destination;
         this.departureAirport = departureAirport;
         this.departureTime = departureTime;
+
         this.emptySeats = plane.getPlaneCapacity();
 
         this.plane = plane;
@@ -40,8 +41,7 @@ public class Flight {
         this.passengers = new ArrayList<Passenger>();
         this.cabinCrewMembers = new ArrayList<CabinCrewMembers>();
         this.pilots = new ArrayList<Pilot>();
-//
-//        this.assignSeatNumber = flight.addPassengersToFlight();
+        this.assignSeatNumber = new ArrayList<Passenger>();
 
     }
 
@@ -108,10 +108,19 @@ public class Flight {
         if (getPassengerList() < this.plane.getPlaneCapacity()){
             this.emptySeats -= 1;
             this.passengers.add(passenger);
-//            Random rand = new Random();
-//            assignSeatNumber = rand.nextInt(5);
+            passenger.setFlight(flight);
+            passenger.setSeatNumber(this.getAssignedSeat());
+            passenger.getFlight();
             return "Booked on to flight";
         }
         return "Flight is full";
     }
+
+
+    public int getAssignedSeat(){
+        Random rand = new Random();
+        int assignedSeat =  rand.nextInt(5);
+        return assignedSeat;
+    }
+
 }

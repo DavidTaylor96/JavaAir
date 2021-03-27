@@ -90,6 +90,11 @@ public class FlightTest {
         }
 
         @Test
+        public void hasSeatsAvailable(){
+            assertEquals(5, flight.getAvailableSeats());
+        }
+
+        @Test
         public void canAddPassengersToFlight(){
             flight.addPassengersToFlight(passenger);
             flight.addPassengersToFlight(passenger);
@@ -105,6 +110,6 @@ public class FlightTest {
             flight.addPassengersToFlight(passenger);
             flight.addPassengersToFlight(passenger);
             assertEquals("Flight is full", flight.addPassengersToFlight(passenger));
-
         }
+
 }

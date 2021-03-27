@@ -7,10 +7,11 @@ import planes.PlaneType;
 
 import java.util.Random;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 public class PassengerTest {
     Passenger passenger;
+    Passenger passenger1;
     Flight flight;
     Plane plane;
 
@@ -22,6 +23,7 @@ public class PassengerTest {
         flight = new Flight("FF6622", "EDI", "GLA", "13:00", plane);
 
         passenger = new Passenger("David", 1, flight, 0);
+        passenger1 = new Passenger("Juan", 1, flight, 0);
 
     }
 
@@ -38,11 +40,26 @@ public class PassengerTest {
 
     @Test
     public void hasFlightAssigned(){
-        assertEquals(flight, passenger.getFlight());
+        assertEquals("Destination: EDI, Flight time: 13:00, Flight number: FF6622", passenger.getFlightDetail());
     }
 
     @Test
     public void hasRandomSeatNumber(){
         assertEquals(0, passenger.getSeatNumber());
+    }
+
+    @Test
+    public void hasBeenAssignedSeat(){
+        flight.addPassengersToFlight(passenger);
+
+        // Not to sure how this works.
+        assertEquals(true, passenger.getSeatNumber() != 0);
+    }
+
+    @Test
+    public void twoPassengersTwoSeatNumber(){
+        flight.addPassengersToFlight(passenger);
+        flight.addPassengersToFlight(passenger1);
+        assertNotEquals(passenger.getSeatNumber(), passenger1.getSeatNumber());
     }
 }

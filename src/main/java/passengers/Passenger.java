@@ -2,8 +2,6 @@ package passengers;
 
 import flights.Flight;
 
-import java.util.Random;
-
 public class Passenger {
 
     private String name;
@@ -18,7 +16,6 @@ public class Passenger {
         this.bags = bags;
         this.flight = flight;
         this.seatNumber = seatNumber;
-//        this.seatNumber = getSeatNumber();
     }
 
     public String getName() {
@@ -29,17 +26,23 @@ public class Passenger {
         return bags;
     }
 
+    public String getFlightDetail() {
+        return "Destination: " +flight.getDestination() + ", Flight time: " + flight.getDepartureTime() + ", Flight number: " + flight.getFlightNumber();
+    }
+
     public Flight getFlight() {
         return flight;
     }
 
-    public int getSeatNumber() {
+    public void setFlight(Flight flight) {
+        this.flight = flight;
+    }
+
+    public int getSeatNumber(){
         return seatNumber;
     }
 
-    //
-//    public int getSeatNumber() {
-//        Random rand = new Random();
-//        return this.seatNumber = rand.nextInt(5);
-//    }
+    public void setSeatNumber(int seatNumber) {
+        this.seatNumber = seatNumber;
+    }
 }
