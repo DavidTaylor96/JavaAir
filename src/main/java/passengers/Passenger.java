@@ -9,6 +9,8 @@ public class Passenger {
     private String name;
     private int bags;
     private Flight flight;
+
+    
     private int seatNumber;
 
     public Passenger(String name, int bags, Flight flight) {
