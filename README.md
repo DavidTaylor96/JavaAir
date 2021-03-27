@@ -6,10 +6,10 @@ Your task is to model a system for the world renowned airline JavaAir, to allow 
 
 <h2>Assumptions:</h2>
 
-<p>Each passenger bag weighs the same</p>
-<p>Planes reserve half of their total weight for passenger bags</p>
-<p>The weight of bag per person is the weight reserved for passenger bags divided by the capacity</p>
-<p>Passengers exist for a single flight only</p>
+<p> - Each passenger bag weighs the same</p>
+<p> - Planes reserve half of their total weight for passenger bags</p>
+<p> - The weight of bag per person is the weight reserved for passenger bags divided by the capacity</p>
+<p> - Passengers exist for a single flight only</p>
 
 <h2>MVP</h2>
 A Passenger has:
