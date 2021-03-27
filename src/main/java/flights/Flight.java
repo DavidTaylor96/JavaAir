@@ -26,7 +26,6 @@ public class Flight {
 
     public Flight(String flightNumber, String destination, String departureAirport, String departureTime, Plane plane) {
 
-
         this.flightNumber = flightNumber;
         this.destination = destination;
         this.departureAirport = departureAirport;

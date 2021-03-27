@@ -24,7 +24,7 @@ public class FlightManagerTest {
 
         flightManger = new FlightManger("Harrison", flight);
 
-        passenger = new Passenger("Bob", 1);
+        passenger = new Passenger("Bob", 1, flight);
     }
 
     @Test
