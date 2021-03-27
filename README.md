@@ -1,31 +1,35 @@
-### JavaAir
-Airline!
+<h1>JavaAir</h1>
+
+<h2>Airline!</h2>
+
 Your task is to model a system for the world renowned airline JavaAir, to allow them to manage their flights. You should use the tools you have learnt this week where appropriate and useful. Remember to TDD!
 
-JavaAir doesn't really exist (sadly) - don't stress about how a "real" example of this would work differently. This is just an exercise to practice some different concepts.
+<h2>Assumptions:</h2>
 
-#Assumptions:
+<p>Each passenger bag weighs the same</p>
+<p>Planes reserve half of their total weight for passenger bags</p>
+<p>The weight of bag per person is the weight reserved for passenger bags divided by the capacity</p>
+<p>Passengers exist for a single flight only</p>
 
-Each passenger bag weighs the same
-Planes reserve half of their total weight for passenger bags
-The weight of bag per person is the weight reserved for passenger bags divided by the capacity
-Passengers exist for a single flight only
-
-###MVP
+<h2>MVP</h2>
 A Passenger has:
+<ul>
+ <li>a name</li>
+ <li>a number of bags</li>
+</ul> 
 
-a name
-a number of bags
-A CabinCrewMember has:
-
-a name
-a rank (e.g Captain/First Officer/Purser, Flight Attendant)
-Hint
+<p>A CabinCrewMember has:<p>
+ <ul>
+   <li>a name</li> 
+   <li>a rank (e.g Captain/First Officer/Purser, Flight Attendant)</li>
+  </ul>
+  
 A Pilot has:
-
-a name
-a rank
-a pilot licence number (you can use a String for this)
+<ul>
+<li>a name</li>
+<li>a rank</li>
+<li>a pilot licence number (you can use a String for this)</li>
+</ul>
 A Plane has:
 
 an plane type (e.g. BOEING747) which stores capacity and total weight
