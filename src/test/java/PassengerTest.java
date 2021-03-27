@@ -21,7 +21,7 @@ public class PassengerTest {
 
         flight = new Flight("FF6622", "EDI", "GLA", "13:00", plane);
 
-        passenger = new Passenger("David", 1, flight);
+        passenger = new Passenger("David", 1, flight, 0);
 
     }
 
@@ -43,6 +43,6 @@ public class PassengerTest {
 
     @Test
     public void hasRandomSeatNumber(){
-        assertEquals(, passenger.getSeatNumber());
+        assertEquals(0, passenger.getSeatNumber());
     }
 }

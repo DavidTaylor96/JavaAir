@@ -6,6 +6,7 @@ import passengers.Passenger;
 import planes.Plane;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Flight {
 
@@ -23,6 +24,8 @@ public class Flight {
 
     private int emptySeats;
 
+   private Flight flight;
+   private String assignSeatNumber;
 
     public Flight(String flightNumber, String destination, String departureAirport, String departureTime, Plane plane) {
 
@@ -37,6 +40,8 @@ public class Flight {
         this.passengers = new ArrayList<Passenger>();
         this.cabinCrewMembers = new ArrayList<CabinCrewMembers>();
         this.pilots = new ArrayList<Pilot>();
+//
+//        this.assignSeatNumber = flight.addPassengersToFlight();
 
     }
 
@@ -103,6 +108,8 @@ public class Flight {
         if (getPassengerList() < this.plane.getPlaneCapacity()){
             this.emptySeats -= 1;
             this.passengers.add(passenger);
+//            Random rand = new Random();
+//            assignSeatNumber = rand.nextInt(5);
             return "Booked on to flight";
         }
         return "Flight is full";

@@ -29,7 +29,7 @@ public class FlightTest {
         @Before
         public void before(){
 
-            passenger = new Passenger("David", 1, flight);
+            passenger = new Passenger("David", 1, flight, 0);
 
             cabinCrewMember = new CabinCrewMembers("John", CrewType.FLIGHT_ATTENDANT);
 
