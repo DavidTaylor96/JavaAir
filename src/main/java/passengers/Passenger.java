@@ -2,6 +2,8 @@ package passengers;
 
 import flights.Flight;
 
+import java.time.LocalTime;
+
 public class Passenger {
 
     private String name;
@@ -44,5 +46,9 @@ public class Passenger {
 
     public void setSeatNumber(int seatNumber) {
         this.seatNumber = seatNumber;
+    }
+
+    public LocalTime getFlightTime(){
+       return LocalTime.parse(flight.getDepartureTime());
     }
 }

@@ -5,6 +5,7 @@ import passengers.Passenger;
 import planes.Plane;
 import planes.PlaneType;
 
+import java.time.LocalTime;
 import java.util.Random;
 
 import static org.junit.Assert.*;
@@ -61,5 +62,10 @@ public class PassengerTest {
         flight.addPassengersToFlight(passenger);
         flight.addPassengersToFlight(passenger1);
         assertNotEquals(passenger.getSeatNumber(), passenger1.getSeatNumber());
+    }
+
+    @Test
+    public void getTimeMigration(){
+        assertEquals(LocalTime.parse("13:00"), passenger.getFlightTime());
     }
 }
