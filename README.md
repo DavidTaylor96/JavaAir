@@ -30,40 +30,50 @@ A Pilot has:
 <li>a rank</li>
 <li>a pilot licence number (you can use a String for this)</li>
 </ul>
+
 A Plane has:
+<ul>
+ <li>an plane type (e.g. BOEING747) which stores capacity and total weight</li>
+</ul>
 
-an plane type (e.g. BOEING747) which stores capacity and total weight
-Hint
 A Flight has:
+<ul>
+<li>at least one Pilot</li>
+<li>a list of CabinCrewMembers (you can decide the number)</li>
+<li>an empty list of booked Passenger's</li>
+<li>a Plane</li>
+<li>flight number (i.e. "FR756")</li>
+<li>destination (i.e. GLA, EDI)</li>
+<li>departure airport (i.e. GLA, EDI)</li>
+<li>departure time (use a String)</li>
+</ul>
 
-at least one Pilot
-a list of CabinCrewMembers (you can decide the number)
-an empty list of booked Passenger's
-a Plane
-flight number (i.e. "FR756")
-destination (i.e. GLA, EDI)
-departure airport (i.e. GLA, EDI)
-departure time (use a String)
 The Flight should be able to:
 
-return the number of available seats
-book a passenger (if there are remaining seats)
-A Pilot should be able to:
+<ul>
+<li>return the number of available seats</li>
+<li>book a passenger (if there are remaining seats)</li>
+<li>A Pilot should be able to:</li>
+<li>fly the plane (a simple method which returns a String is sufficient)</li>
+</ul>
 
-fly the plane (a simple method which returns a String is sufficient)
 A CabinCrewMember should be able to:
+<ul>
+<li>relay messages to the passengers(a simple method which returns a String is sufficient)</li>
+ </ul>
 
-relay messages to the passengers(a simple method which returns a String is sufficient)
+<h2>Extensions</h2>
 
-###Extensions
 Create a FlightManager which can:
+<ul>
+<li>calculate how much baggage weight should be reserved for each passenger for a flight</li>
+<li>calculate how much baggage weight is booked by passengers of a flight</li>
+<li>calculate how much overall weight reserved for baggage remains for a flight</li>
+</ul>
 
-calculate how much baggage weight should be reserved for each passenger for a flight
-calculate how much baggage weight is booked by passengers of a flight
-calculate how much overall weight reserved for baggage remains for a flight
-
-###More Extensions
-Refactor the Flight's departure time to use the Date class (HINT: Look into Type Migration in IntelliJ to refactor faster)
-Add a 'flight' property to the Passenger which is assigned when a passenger is added to a flight
-Add a 'seat number' property to the Passenger as an integer. Set it to a random number which is assigned when a Passenger is booked on a flight
-Make sure the flight doesn't double book the same seat number to more than one passenger
+<h2>More Extensions</h2>
+<ul>
+<li>Add a 'flight' property to the Passenger which is assigned when a passenger is added to a flight</li>
+<li>Add a 'seat number' property to the Passenger as an integer. Set it to a random number which is assigned when a Passenger is booked on a flight</li>
+<li>Make sure the flight doesn't double book the same seat number to more than one passenger</li>
+</ul>
