@@ -17,13 +17,19 @@ public class FlightManger {
         return name;
     }
 
-    public double getWeightReservedForOnePassenger() {
+    // weight reserved for one person bags.
+    public double getWeightReservedForOnePassengerBags() {
         int weight = this.flight.getPlane().getPlaneTotalWeight() / 2;
         return weight / this.flight.getPlane().getPlaneCapacity();
     }
 
-    public int bagageWeightAllowed() {
-        int fullWeightAllowance = this.flight.getPlane().getPlaneTotalWeight() / 2;
-        return (int) (fullWeightAllowance - this.flight.getPassengerList() * this.getWeightReservedForOnePassenger());
+    // weight of bags for all booked passengers
+    public int weightOFBagsForAllBookedPassengers() {
+        return (int) (this.flight.getPassengerList() * this.getWeightReservedForOnePassengerBags() );
+    }
+
+    public int baggageWeightLeft(){
+      int weightLeft = this.flight.getPlane().getPlaneTotalWeight() / 2;
+      return weightLeft - this.weightOFBagsForAllBookedPassengers();
     }
 }

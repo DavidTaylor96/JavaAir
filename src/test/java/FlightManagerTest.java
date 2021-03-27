@@ -34,18 +34,21 @@ public class FlightManagerTest {
 
     @Test
     public void canCalculateBaggageWeightPerPassenger(){
-        assertEquals(5, flightManger.getWeightReservedForOnePassenger(), 0.0);
+        assertEquals(5, flightManger.getWeightReservedForOnePassengerBags(), 0.0);
     }
 
-    @Test
-    public void canCalculateWeightForAllPassengers(){
-        assertEquals(25, flightManger.bagageWeightAllowed());
-    }
 
     @Test
     public void canCalculateWeightAfterAddingPassengers(){
         flight.addPassengersToFlight(passenger);
         flight.addPassengersToFlight(passenger);
-        assertEquals(15, flightManger.bagageWeightAllowed());
+        assertEquals(10, flightManger.weightOFBagsForAllBookedPassengers());
+    }
+
+    @Test
+    public void hasBaggageWeightLeftOver(){
+        flight.addPassengersToFlight(passenger);
+        flight.addPassengersToFlight(passenger);
+        assertEquals(15, flightManger.baggageWeightLeft());
     }
 }
