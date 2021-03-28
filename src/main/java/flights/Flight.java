@@ -105,7 +105,7 @@ public class Flight {
 
 
     public String addPassengersToFlight(Passenger passenger){
-        if (getPassengerList() < this.plane.getPlaneCapacity()){
+        if (getPassengerList() < this.getAvailableSeats()){
             this.emptySeats -= 1;
             this.passengers.add(passenger);
             passenger.setFlight(flight);
